@@ -14,17 +14,31 @@ PHP 8.2+ (ext: `pdo_sqlite` or `pdo_mysql`, `zip`, `gd`, `mbstring`), Composer 2
 
 ## Installation
 
+### Web installer (like WordPress)
+
+1. Upload the files to your server and point the web root (document root) at the **`public/`** folder.
+2. Run `composer install --no-dev --optimize-autoloader` in the site folder (the page tells you if you forgot).
+3. Open your site in the browser — you are sent to **`/install`**, a 4-step wizard:
+   - **Server check** — PHP version, extensions, database drivers and writable folders.
+   - **Database** — choose **MySQL, MariaDB, PostgreSQL, SQL Server or SQLite**, enter host, port, database name, username, password and a **table prefix** (e.g. `bw_`, so several sites can share one database). *Test connection* checks the credentials, shows the server version, warns if the prefix is already in use, and offers to **create the database** if it doesn’t exist.
+   - **Site information** — site title, tagline, site URL, timezone, administrator username / email / password (with generator and strength meter), starting theme, sample content, the Simple Shop demo, search-engine visibility and production mode.
+   - **Install** — saves everything to `.env` (the `wp-config.php` equivalent), creates the tables, roles, admin account, settings and sample content, links `public/storage`, and shows a step-by-step log, then a **Log In** button.
+
+On a fresh server the installer creates `.env` from `.env.example` and generates the `APP_KEY` automatically (`bootstrap/preinstall.php`). The site folder (or at least `.env`), `storage/`, `bootstrap/cache/` and `content/` must be writable by the web server. Once installed, `/install` is locked; to reinstall, delete `storage/app/.cms-installed` and the database tables.
+
+### Command line
+
 ```bash
 composer install
-cp .env.example .env            # SQLite by default; set DB_* for MySQL
+cp .env.example .env               # set DB_CONNECTION / DB_* (SQLite works out of the box)
 php artisan key:generate
-npm install && npm run build:all   # admin/front runtime + theme bundles (prebuilt copies are included)
-php artisan cms:install            # migrations, roles, admin user, sample content
-#   --demo   also activates the Simple Shop plugin with sample products
+php artisan cms:install            # --title= --username= --email= --password= --theme= --demo --no-sample --fresh --force
 php artisan serve                  # http://localhost:8000  —  admin at /admin
 ```
 
-Production: point the web root at `public/`, run `php artisan storage:link`, add the scheduler (`* * * * * php artisan schedule:run`) so `cms_cron` fires (scheduled posts), and set `CMS_DISALLOW_FILE_EDIT=true`.
+Front-end assets are prebuilt; run `npm install && npm run build:all` only after changing the React sources or themes.
+
+Production: run `php artisan storage:link` if the installer couldn’t, add the scheduler (`* * * * * php artisan schedule:run`) so `cms_cron` fires (scheduled posts), and set `CMS_DISALLOW_FILE_EDIT=true`.
 
 Useful commands:
 
@@ -34,6 +48,7 @@ php artisan cms:theme list | activate minimal
 npm run build:themes -- aurora           # rebuild one theme   (node theme-kit/build-all.mjs aurora --watch)
 php artisan test                         # PHPUnit suite
 php tests/standalone/run.php             # framework-free core smoke tests
+php tests/standalone/install.php         # installer pieces (.env writer, DB probe, requirements)
 ```
 
 ---

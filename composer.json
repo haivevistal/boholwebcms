@@ -3,21 +3,28 @@
     "name": "boholweb/boholwebcms",
     "type": "project",
     "description": "BoholwebCMS — a WordPress-style CMS (plugins, themes, hooks, shortcodes) built on Laravel 12, Inertia.js and React.",
-    "keywords": ["laravel", "cms", "inertia", "react", "plugins", "themes"],
+    "keywords": [
+        "laravel",
+        "cms",
+        "inertia",
+        "react",
+        "plugins",
+        "themes"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
         "ext-zip": "*",
         "ext-gd": "*",
         "inertiajs/inertia-laravel": "^2.0",
-        "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10"
+        "laravel/framework": "^12.0|^13.0",
+        "laravel/tinker": "^2.10|^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^11.5"
+        "phpunit/phpunit": "^11.5|^12.0"
     },
     "autoload": {
         "psr-4": {

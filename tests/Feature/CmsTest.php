@@ -128,4 +128,10 @@ class CmsTest extends TestCase
         $this->actingAs($sub)->get('/admin/settings/general')->assertForbidden();
         $this->actingAs($sub)->get('/admin')->assertRedirect('/admin/profile');
     }
+
+    public function test_web_installer_is_locked_after_installation(): void
+    {
+        $this->get('/install')->assertRedirect('/admin');
+        $this->postJson('/install/run', [])->assertForbidden();
+    }
 }

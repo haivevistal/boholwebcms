@@ -116,15 +116,6 @@ class AuthController extends Controller
         return $this->logout($request);
     }
 
-    public function installNotice()
-    {
-        if (cms_installed()) {
-            return redirect('/');
-        }
-
-        return Inertia::render('Auth/Install');
-    }
-
     protected function safeRedirect(?string $url): ?string
     {
         if (! $url) {

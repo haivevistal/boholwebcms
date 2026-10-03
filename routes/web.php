@@ -21,7 +21,17 @@ Route::middleware('guest')->group(function () {
 });
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/logout', [AuthController::class, 'logoutGet'])->name('logout.get');
-Route::get('/install', [AuthController::class, 'installNotice'])->name('install.notice');
+
+/*
+|--------------------------------------------------------------------------
+| Web installer (locked after installation)
+|--------------------------------------------------------------------------
+*/
+Route::middleware(\App\Http\Middleware\EnsureNotInstalled::class)->prefix('install')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Install\InstallController::class, 'show'])->name('install.notice');
+    Route::post('/database', [\App\Http\Controllers\Install\InstallController::class, 'checkDatabase'])->name('install.database')->middleware('throttle:20,1');
+    Route::post('/run', [\App\Http\Controllers\Install\InstallController::class, 'run'])->name('install.run')->middleware('throttle:5,1');
+});
 
 /*
 |--------------------------------------------------------------------------

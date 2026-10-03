@@ -3,22 +3,43 @@
     "file": "assets/HtmlContent-ym5cu5a-.js",
     "name": "HtmlContent"
   },
-  "_layout-template-xxDc3-Fi.js": {
-    "file": "assets/layout-template-xxDc3-Fi.js",
+  "_arrow-right-CqjFA51I.js": {
+    "file": "assets/arrow-right-CqjFA51I.js",
+    "name": "arrow-right",
+    "imports": [
+      "resources/js/admin.jsx"
+    ]
+  },
+  "_circle-check-B4au9yX3.js": {
+    "file": "assets/circle-check-B4au9yX3.js",
+    "name": "circle-check",
+    "imports": [
+      "resources/js/admin.jsx"
+    ]
+  },
+  "_layout-template-Brt-KxSQ.js": {
+    "file": "assets/layout-template-Brt-KxSQ.js",
     "name": "layout-template",
     "imports": [
       "resources/js/admin.jsx"
     ]
   },
-  "_triangle-alert-BtGdaD24.js": {
-    "file": "assets/triangle-alert-BtGdaD24.js",
+  "_refresh-cw-BkdYzcAc.js": {
+    "file": "assets/refresh-cw-BkdYzcAc.js",
+    "name": "refresh-cw",
+    "imports": [
+      "resources/js/admin.jsx"
+    ]
+  },
+  "_triangle-alert-CumWrxHR.js": {
+    "file": "assets/triangle-alert-CumWrxHR.js",
     "name": "triangle-alert",
     "imports": [
       "resources/js/admin.jsx"
     ]
   },
   "resources/js/admin.jsx": {
-    "file": "assets/admin-DHyj6H07.js",
+    "file": "assets/admin-Beztwecx.js",
     "name": "admin",
     "src": "resources/js/admin.jsx",
     "isEntry": true,
@@ -29,12 +50,12 @@
       "resources/js/admin/Pages/Appearance/Customize.jsx",
       "resources/js/admin/Pages/Appearance/Themes.jsx",
       "resources/js/admin/Pages/Auth/AuthShell.jsx",
-      "resources/js/admin/Pages/Auth/Install.jsx",
       "resources/js/admin/Pages/Auth/Login.jsx",
       "resources/js/admin/Pages/Auth/Register.jsx",
       "resources/js/admin/Pages/Comments/Index.jsx",
       "resources/js/admin/Pages/Dashboard.jsx",
       "resources/js/admin/Pages/Editors/FileEditor.jsx",
+      "resources/js/admin/Pages/Install/Wizard.jsx",
       "resources/js/admin/Pages/Media/Index.jsx",
       "resources/js/admin/Pages/PluginPage.jsx",
       "resources/js/admin/Pages/Plugins/Add.jsx",
@@ -54,29 +75,30 @@
       "resources/js/admin/Pages/Users/Roles.jsx"
     ],
     "css": [
-      "assets/admin-C-EOzr1c.css"
+      "assets/admin-BQJYXEmw.css"
     ]
   },
   "resources/js/admin/Pages/Appearance/Customize.jsx": {
-    "file": "assets/Customize-DTWdMIMr.js",
+    "file": "assets/Customize-Dg66t24n.js",
     "name": "Customize",
     "src": "resources/js/admin/Pages/Appearance/Customize.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_HtmlContent-ym5cu5a-.js",
-      "resources/js/admin.jsx"
+      "resources/js/admin.jsx",
+      "_refresh-cw-BkdYzcAc.js"
     ]
   },
   "resources/js/admin/Pages/Appearance/Themes.jsx": {
-    "file": "assets/Themes-PxP--P61.js",
+    "file": "assets/Themes-B5jLwLfY.js",
     "name": "Themes",
     "src": "resources/js/admin/Pages/Appearance/Themes.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_HtmlContent-ym5cu5a-.js",
       "resources/js/admin.jsx",
-      "_layout-template-xxDc3-Fi.js",
-      "_triangle-alert-BtGdaD24.js"
+      "_layout-template-Brt-KxSQ.js",
+      "_triangle-alert-CumWrxHR.js"
     ]
   },
   "resources/js/admin/Pages/Auth/AuthShell.jsx": {
@@ -88,18 +110,8 @@
       "_HtmlContent-ym5cu5a-.js"
     ]
   },
-  "resources/js/admin/Pages/Auth/Install.jsx": {
-    "file": "assets/Install-B9WwhrI1.js",
-    "name": "Install",
-    "src": "resources/js/admin/Pages/Auth/Install.jsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "_HtmlContent-ym5cu5a-.js",
-      "resources/js/admin/Pages/Auth/AuthShell.jsx"
-    ]
-  },
   "resources/js/admin/Pages/Auth/Login.jsx": {
-    "file": "assets/Login-CWnqnJPa.js",
+    "file": "assets/Login-D81BJFAa.js",
     "name": "Login",
     "src": "resources/js/admin/Pages/Auth/Login.jsx",
     "isDynamicEntry": true,
@@ -110,7 +122,7 @@
     ]
   },
   "resources/js/admin/Pages/Auth/Register.jsx": {
-    "file": "assets/Register-BinilhJ8.js",
+    "file": "assets/Register-DknjzBvJ.js",
     "name": "Register",
     "src": "resources/js/admin/Pages/Auth/Register.jsx",
     "isDynamicEntry": true,
@@ -121,7 +133,7 @@
     ]
   },
   "resources/js/admin/Pages/Comments/Index.jsx": {
-    "file": "assets/Index-CAQ1V7v8.js",
+    "file": "assets/Index-B9Z-XA8v.js",
     "name": "Index",
     "src": "resources/js/admin/Pages/Comments/Index.jsx",
     "isDynamicEntry": true,
@@ -131,18 +143,19 @@
     ]
   },
   "resources/js/admin/Pages/Dashboard.jsx": {
-    "file": "assets/Dashboard-CF6Gbd4x.js",
+    "file": "assets/Dashboard-D30oYqG6.js",
     "name": "Dashboard",
     "src": "resources/js/admin/Pages/Dashboard.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_HtmlContent-ym5cu5a-.js",
       "resources/js/admin.jsx",
-      "_layout-template-xxDc3-Fi.js"
+      "_layout-template-Brt-KxSQ.js",
+      "_arrow-right-CqjFA51I.js"
     ]
   },
   "resources/js/admin/Pages/Editors/FileEditor.jsx": {
-    "file": "assets/FileEditor-jDXdSXoZ.js",
+    "file": "assets/FileEditor-CbHqobND.js",
     "name": "FileEditor",
     "src": "resources/js/admin/Pages/Editors/FileEditor.jsx",
     "isDynamicEntry": true,
@@ -151,8 +164,22 @@
       "resources/js/admin.jsx"
     ]
   },
+  "resources/js/admin/Pages/Install/Wizard.jsx": {
+    "file": "assets/Wizard-Ce-Y8-jh.js",
+    "name": "Wizard",
+    "src": "resources/js/admin/Pages/Install/Wizard.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_HtmlContent-ym5cu5a-.js",
+      "resources/js/admin.jsx",
+      "_circle-check-B4au9yX3.js",
+      "_refresh-cw-BkdYzcAc.js",
+      "_arrow-right-CqjFA51I.js",
+      "_triangle-alert-CumWrxHR.js"
+    ]
+  },
   "resources/js/admin/Pages/Media/Index.jsx": {
-    "file": "assets/Index-DZXQHc5n.js",
+    "file": "assets/Index-D8mfxTHX.js",
     "name": "Index",
     "src": "resources/js/admin/Pages/Media/Index.jsx",
     "isDynamicEntry": true,
@@ -162,7 +189,7 @@
     ]
   },
   "resources/js/admin/Pages/PluginPage.jsx": {
-    "file": "assets/PluginPage-Dy42DL5A.js",
+    "file": "assets/PluginPage-DPnX9LXJ.js",
     "name": "PluginPage",
     "src": "resources/js/admin/Pages/PluginPage.jsx",
     "isDynamicEntry": true,
@@ -172,7 +199,7 @@
     ]
   },
   "resources/js/admin/Pages/Plugins/Add.jsx": {
-    "file": "assets/Add-DekApBkb.js",
+    "file": "assets/Add-DqR_3zSR.js",
     "name": "Add",
     "src": "resources/js/admin/Pages/Plugins/Add.jsx",
     "isDynamicEntry": true,
@@ -182,7 +209,7 @@
     ]
   },
   "resources/js/admin/Pages/Plugins/Index.jsx": {
-    "file": "assets/Index-Cmi_9a-C.js",
+    "file": "assets/Index-Bf5TRqDj.js",
     "name": "Index",
     "src": "resources/js/admin/Pages/Plugins/Index.jsx",
     "isDynamicEntry": true,
@@ -192,7 +219,7 @@
     ]
   },
   "resources/js/admin/Pages/Posts/Edit.jsx": {
-    "file": "assets/Edit-CapLCvE6.js",
+    "file": "assets/Edit-t-b-vkQ0.js",
     "name": "Edit",
     "src": "resources/js/admin/Pages/Posts/Edit.jsx",
     "isDynamicEntry": true,
@@ -202,7 +229,7 @@
     ]
   },
   "resources/js/admin/Pages/Posts/Index.jsx": {
-    "file": "assets/Index-mtDcpQB6.js",
+    "file": "assets/Index-DNQAhWnO.js",
     "name": "Index",
     "src": "resources/js/admin/Pages/Posts/Index.jsx",
     "isDynamicEntry": true,
@@ -212,7 +239,7 @@
     ]
   },
   "resources/js/admin/Pages/Settings/Page.jsx": {
-    "file": "assets/Page-Nj_EgivS.js",
+    "file": "assets/Page-BJBqePVr.js",
     "name": "Page",
     "src": "resources/js/admin/Pages/Settings/Page.jsx",
     "isDynamicEntry": true,
@@ -222,7 +249,7 @@
     ]
   },
   "resources/js/admin/Pages/Terms/Index.jsx": {
-    "file": "assets/Index-B7utWs3e.js",
+    "file": "assets/Index-CU9KBTqk.js",
     "name": "Index",
     "src": "resources/js/admin/Pages/Terms/Index.jsx",
     "isDynamicEntry": true,
@@ -232,7 +259,7 @@
     ]
   },
   "resources/js/admin/Pages/Tools/ClearCache.jsx": {
-    "file": "assets/ClearCache-Bq1X2OhJ.js",
+    "file": "assets/ClearCache-CP5zu_04.js",
     "name": "ClearCache",
     "src": "resources/js/admin/Pages/Tools/ClearCache.jsx",
     "isDynamicEntry": true,
@@ -242,7 +269,7 @@
     ]
   },
   "resources/js/admin/Pages/Tools/Export.jsx": {
-    "file": "assets/Export-C2MFBce5.js",
+    "file": "assets/Export-DquoUskv.js",
     "name": "Export",
     "src": "resources/js/admin/Pages/Tools/Export.jsx",
     "isDynamicEntry": true,
@@ -252,7 +279,7 @@
     ]
   },
   "resources/js/admin/Pages/Tools/Hooks.jsx": {
-    "file": "assets/Hooks-Cn3COmgu.js",
+    "file": "assets/Hooks-D9ojrZuJ.js",
     "name": "Hooks",
     "src": "resources/js/admin/Pages/Tools/Hooks.jsx",
     "isDynamicEntry": true,
@@ -262,7 +289,7 @@
     ]
   },
   "resources/js/admin/Pages/Tools/Import.jsx": {
-    "file": "assets/Import-Huq75a2l.js",
+    "file": "assets/Import-DdBFoVzI.js",
     "name": "Import",
     "src": "resources/js/admin/Pages/Tools/Import.jsx",
     "isDynamicEntry": true,
@@ -272,7 +299,7 @@
     ]
   },
   "resources/js/admin/Pages/Tools/Index.jsx": {
-    "file": "assets/Index-CuXn5qb7.js",
+    "file": "assets/Index-U6biox9o.js",
     "name": "Index",
     "src": "resources/js/admin/Pages/Tools/Index.jsx",
     "isDynamicEntry": true,
@@ -282,18 +309,19 @@
     ]
   },
   "resources/js/admin/Pages/Tools/SiteHealth.jsx": {
-    "file": "assets/SiteHealth-YrlUOUgO.js",
+    "file": "assets/SiteHealth-_x1mdDGy.js",
     "name": "SiteHealth",
     "src": "resources/js/admin/Pages/Tools/SiteHealth.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_HtmlContent-ym5cu5a-.js",
       "resources/js/admin.jsx",
-      "_triangle-alert-BtGdaD24.js"
+      "_circle-check-B4au9yX3.js",
+      "_triangle-alert-CumWrxHR.js"
     ]
   },
   "resources/js/admin/Pages/Users/Edit.jsx": {
-    "file": "assets/Edit-Bhx8VuWQ.js",
+    "file": "assets/Edit-B4zEn5NN.js",
     "name": "Edit",
     "src": "resources/js/admin/Pages/Users/Edit.jsx",
     "isDynamicEntry": true,
@@ -303,7 +331,7 @@
     ]
   },
   "resources/js/admin/Pages/Users/Index.jsx": {
-    "file": "assets/Index-BbHsBcd6.js",
+    "file": "assets/Index-BCbuFHJs.js",
     "name": "Index",
     "src": "resources/js/admin/Pages/Users/Index.jsx",
     "isDynamicEntry": true,
@@ -313,7 +341,7 @@
     ]
   },
   "resources/js/admin/Pages/Users/Roles.jsx": {
-    "file": "assets/Roles-B6q8XtL3.js",
+    "file": "assets/Roles-CKQBIzh1.js",
     "name": "Roles",
     "src": "resources/js/admin/Pages/Users/Roles.jsx",
     "isDynamicEntry": true,

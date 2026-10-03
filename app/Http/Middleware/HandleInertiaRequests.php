@@ -13,7 +13,7 @@ class HandleInertiaRequests extends Middleware
 
     public function rootView(Request $request): string
     {
-        return $this->isAdmin($request) || $request->routeIs('login', 'register', 'password.*', 'install.notice') ? 'admin' : 'front';
+        return $this->isAdmin($request) || $request->routeIs('login', 'register', 'password.*', 'install.*') ? 'admin' : 'front';
     }
 
     public function version(Request $request): ?string

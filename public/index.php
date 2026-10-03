@@ -10,6 +10,12 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
     require $maintenance;
 }
 
+// First run on a server: check dependencies and create .env + APP_KEY so the
+// web installer (/install) can boot. Does nothing once the site is set up.
+if (! is_file(__DIR__.'/../storage/app/.cms-installed')) {
+    require __DIR__.'/../bootstrap/preinstall.php';
+}
+
 // Register the Composer autoloader...
 require __DIR__.'/../vendor/autoload.php';
 
