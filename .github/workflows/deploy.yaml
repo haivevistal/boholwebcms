@@ -1,0 +1,43 @@
+name: PHP CI
+on:
+  push:
+    branches:
+      - 'stage'
+      - 'main'
+jobs:
+  stage-build:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/stage'
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: stage
+    - name: Deploy to boholwebwp.com
+      uses: easingthemes/ssh-deploy@main
+      env:
+          SSH_PRIVATE_KEY: ${{ secrets.BOHOLWEB_KEY }}
+          ARGS: "-av"
+          SOURCE: "./"
+          REMOTE_HOST: ${{ secrets.BOHOLWEB_IP }}
+          REMOTE_USER: ${{ secrets.BOHOLWEB_USER }}
+          REMOTE_PORT: ${{ secrets.BOHOLWEB_PORT }}
+          TARGET: "/home/boholwebwp-secure/htdocs/boholwebwp.com"
+          EXCLUDE: "config/database.php,config/app.php,artisan,composer.json,composer.lock,*.log,.DS_Store,.env,.env.backup,.env.production,.phpactor.json,.phpunit.result.cache,.fleet,.idea,.nova,node_modules,storage/*.key,storage/pail,vendor,tests,public/storage"
+  main-build:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Deploy to boholwebwp.com LIVE
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.BOHOLWEB_KEY }}
+          ARGS: "-av"
+          SOURCE: "./"
+          REMOTE_HOST: ${{ secrets.BOHOLWEB_IP }}
+          REMOTE_USER: ${{ secrets.BOHOLWEB_USER }}
+          REMOTE_PORT: ${{ secrets.BOHOLWEB_PORT }}
+          TARGET: "/home/boholwebwp-secure/htdocs/boholwebwp.com"
+          EXCLUDE: "config/database.php,config/app.php,artisan,composer.json,composer.lock,*.log,.DS_Store,.env,.env.backup,.env.production,.phpactor.json,.phpunit.result.cache,.fleet,.idea,.nova,node_modules,storage/*.key,storage/pail,vendor,tests,public/storage"
