@@ -1,0 +1,65 @@
+{
+    "name": "Aurora",
+    "version": "1.0.0",
+    "author": "BoholWeb",
+    "author_uri": "https://boholwebwp.com",
+    "description": "The default BoholwebCMS theme: a modern, flexible design with a customizable homepage hero, accent colour, grid or list blog layout, sidebar and footer widget regions, and Full Width & Landing page templates. Built with React.",
+    "tags": ["blog", "business", "right-sidebar", "custom-colors", "custom-logo", "full-width-template", "threaded-comments"],
+    "screenshot": "screenshot.png",
+    "script": "dist/theme.js",
+    "style": "dist/theme.css",
+    "page_templates": {
+        "full-width": "Full Width",
+        "landing": "Landing Page (no header & footer)"
+    },
+    "regions": {
+        "sidebar": "Sidebar",
+        "footer": "Footer Widgets",
+        "before_content": "Before Content"
+    },
+    "menus": {
+        "primary": "Primary Menu",
+        "footer": "Footer Menu"
+    },
+    "customizer": [
+        {
+            "id": "aurora_colors",
+            "title": "Colors",
+            "controls": [
+                { "id": "accent_color", "label": "Accent color", "type": "color", "default": "#4f46e5" },
+                { "id": "header_style", "label": "Header style", "type": "radio", "default": "light", "choices": { "light": "Light", "dark": "Dark", "accent": "Accent" } },
+                { "id": "body_font", "label": "Font", "type": "select", "default": "sans", "choices": { "sans": "Modern sans-serif", "serif": "Classic serif", "mono": "Monospace" } }
+            ]
+        },
+        {
+            "id": "aurora_hero",
+            "title": "Homepage Hero",
+            "description": "A large banner shown at the top of the homepage.",
+            "controls": [
+                { "id": "hero_enabled", "label": "Show the hero on the homepage", "type": "checkbox", "default": true },
+                { "id": "hero_title", "label": "Headline", "type": "text", "default": "Ideas worth sharing" },
+                { "id": "hero_text", "label": "Text", "type": "textarea", "default": "Welcome to our corner of the web. Read the latest stories, guides and updates from our team." },
+                { "id": "hero_button_text", "label": "Button text", "type": "text", "default": "Start reading" },
+                { "id": "hero_button_url", "label": "Button link", "type": "text", "default": "#latest" },
+                { "id": "hero_image", "label": "Background image", "type": "media" }
+            ]
+        },
+        {
+            "id": "aurora_layout",
+            "title": "Layout",
+            "controls": [
+                { "id": "blog_layout", "label": "Blog layout", "type": "radio", "default": "grid", "choices": { "grid": "Cards grid", "list": "Classic list" } },
+                { "id": "show_sidebar", "label": "Show the sidebar on posts and archives", "type": "checkbox", "default": true },
+                { "id": "show_author_box", "label": "Show the author box after posts", "type": "checkbox", "default": true },
+                { "id": "content_width", "label": "Site width (px)", "type": "range", "default": 1180, "attributes": { "min": 960, "max": 1440, "step": 20 } }
+            ]
+        },
+        {
+            "id": "aurora_footer",
+            "title": "Footer",
+            "controls": [
+                { "id": "footer_text", "label": "Copyright text", "type": "text", "default": "© {year} {site}. Proudly powered by BoholwebCMS.", "description": "Use {year} and {site} as placeholders." }
+            ]
+        }
+    ]
+}

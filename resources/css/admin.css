@@ -1,0 +1,96 @@
+@import 'tailwindcss';
+
+@source '../js/admin';
+@source '../js/shared';
+@source '../views';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --color-brand-50: #eef2ff;
+    --color-brand-100: #e0e7ff;
+    --color-brand-500: #6366f1;
+    --color-brand-600: #4f46e5;
+    --color-brand-700: #4338ca;
+}
+
+/* ------------------------------------------------------------------
+ | Rich text editor
+ * ---------------------------------------------------------------- */
+.pm-editor .ProseMirror {
+    min-height: 420px;
+    outline: none;
+    padding: 1.25rem 1.5rem;
+    line-height: 1.7;
+}
+.pm-editor .ProseMirror > * + * { margin-top: 0.85em; }
+.pm-editor .ProseMirror h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; }
+.pm-editor .ProseMirror h2 { font-size: 1.5rem; font-weight: 700; line-height: 1.3; }
+.pm-editor .ProseMirror h3 { font-size: 1.25rem; font-weight: 600; }
+.pm-editor .ProseMirror h4 { font-size: 1.1rem; font-weight: 600; }
+.pm-editor .ProseMirror ul { list-style: disc; padding-left: 1.5rem; }
+.pm-editor .ProseMirror ol { list-style: decimal; padding-left: 1.5rem; }
+.pm-editor .ProseMirror blockquote { border-left: 4px solid #cbd5e1; padding-left: 1rem; color: #475569; font-style: italic; }
+.pm-editor .ProseMirror pre { background: #0f172a; color: #e2e8f0; padding: 0.75rem 1rem; border-radius: 0.5rem; font-size: 0.85rem; overflow-x: auto; }
+.pm-editor .ProseMirror code { background: #f1f5f9; padding: 0.1rem 0.3rem; border-radius: 0.25rem; font-size: 0.9em; }
+.pm-editor .ProseMirror pre code { background: transparent; padding: 0; }
+.pm-editor .ProseMirror a { color: var(--color-brand-600); text-decoration: underline; }
+.pm-editor .ProseMirror img { max-width: 100%; height: auto; border-radius: 0.375rem; }
+.pm-editor .ProseMirror img.ProseMirror-selectednode { outline: 3px solid var(--color-brand-500); }
+.pm-editor .ProseMirror hr { border-color: #e2e8f0; }
+.pm-editor .ProseMirror p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: #94a3b8;
+    pointer-events: none;
+    height: 0;
+}
+
+/* ------------------------------------------------------------------
+ | HTML returned by plugin admin pages & widgets.
+ | Plugin authors can use these classes (WordPress-compatible names too).
+ * ---------------------------------------------------------------- */
+.pm-html { line-height: 1.6; }
+.pm-html > * + * { margin-top: 0.85rem; }
+.pm-html h1 { font-size: 1.5rem; font-weight: 700; }
+.pm-html h2 { font-size: 1.25rem; font-weight: 600; }
+.pm-html h3 { font-size: 1.05rem; font-weight: 600; }
+.pm-html a:not(.button):not(.pm-btn) { color: var(--color-brand-600); }
+.pm-html a:not(.button):not(.pm-btn):hover { text-decoration: underline; }
+.pm-html ul { list-style: disc; padding-left: 1.25rem; }
+.pm-html ol { list-style: decimal; padding-left: 1.25rem; }
+.pm-html code { background: #f1f5f9; padding: 0.1rem 0.35rem; border-radius: 0.25rem; font-size: 0.85em; }
+.pm-html pre { background: #0f172a; color: #e2e8f0; padding: 0.75rem 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.85rem; }
+.pm-html input[type='text'], .pm-html input[type='email'], .pm-html input[type='url'], .pm-html input[type='number'],
+.pm-html input[type='password'], .pm-html input[type='search'], .pm-html input[type='date'], .pm-html select, .pm-html textarea, .pm-input {
+    border: 1px solid #cbd5e1; border-radius: 0.375rem; padding: 0.45rem 0.65rem; font-size: 0.875rem; background: #fff; min-width: 14rem;
+}
+.pm-html textarea { width: 100%; min-height: 6rem; }
+.pm-html input:focus, .pm-html select:focus, .pm-html textarea:focus, .pm-input:focus {
+    outline: 2px solid var(--color-brand-500); outline-offset: -1px; border-color: transparent;
+}
+.pm-html .button, .pm-html button, .pm-btn {
+    display: inline-flex; align-items: center; gap: 0.375rem; border: 1px solid #cbd5e1; background: #fff; color: #0f172a;
+    padding: 0.45rem 0.9rem; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 500; cursor: pointer; text-decoration: none;
+}
+.pm-html .button:hover, .pm-html button:hover, .pm-btn:hover { background: #f8fafc; }
+.pm-html .button-primary, .pm-html button[type='submit'], .pm-btn-primary { background: var(--color-brand-600); border-color: var(--color-brand-600); color: #fff; }
+.pm-html .button-primary:hover, .pm-html button[type='submit']:hover, .pm-btn-primary:hover { background: var(--color-brand-700); }
+.pm-html .button-link-delete, .pm-btn-danger { color: #dc2626; }
+.pm-html table.widefat, .pm-html table.pm-table, .pm-table { width: 100%; border-collapse: collapse; background: #fff; font-size: 0.875rem; }
+.pm-html table.widefat th, .pm-html table.widefat td, .pm-html .pm-table th, .pm-html .pm-table td, .pm-table th, .pm-table td {
+    border-bottom: 1px solid #e2e8f0; padding: 0.6rem 0.75rem; text-align: left; vertical-align: top;
+}
+.pm-html table.widefat thead th, .pm-html .pm-table thead th, .pm-table thead th { background: #f8fafc; font-weight: 600; color: #334155; }
+.pm-html table.form-table { width: 100%; }
+.pm-html table.form-table th { width: 220px; padding: 0.9rem 1rem 0.9rem 0; text-align: left; font-weight: 600; vertical-align: top; font-size: 0.875rem; }
+.pm-html table.form-table td { padding: 0.75rem 0; }
+.pm-html .description { color: #64748b; font-size: 0.8rem; margin-top: 0.25rem; }
+.pm-html .notice, .pm-notice { border-left: 4px solid #6366f1; background: #fff; padding: 0.75rem 1rem; border-radius: 0.25rem; box-shadow: 0 1px 2px rgb(0 0 0 / 0.05); }
+.pm-html .notice-success, .pm-notice-success { border-left-color: #16a34a; }
+.pm-html .notice-error, .pm-notice-error { border-left-color: #dc2626; }
+.pm-html .notice-warning, .pm-notice-warning { border-left-color: #d97706; }
+.pm-html .pm-card, .pm-html .postbox, .pm-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem 1.25rem; }
+.pm-html .pm-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.pm-html .pm-stat { font-size: 1.75rem; font-weight: 700; }
+.pm-html .pm-muted { color: #64748b; }
+.pm-html .pm-badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 9999px; background: #eef2ff; color: #4338ca; font-size: 0.75rem; font-weight: 600; }

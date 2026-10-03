@@ -1,0 +1,15 @@
+/.phpunit.cache
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+npm-debug.log
+/auth.json
+/.idea
+/.vscode
+/database/*.sqlite

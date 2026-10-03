@@ -1,0 +1,23 @@
+{
+    "name": "Minimal Journal",
+    "version": "1.0.0",
+    "author": "BoholWeb",
+    "author_uri": "https://boholwebwp.com",
+    "description": "A quiet, typography-first journal theme: one column, generous whitespace, a dark mode switch and nothing that distracts from your writing.",
+    "tags": ["blog", "one-column", "minimal", "dark-mode", "accessibility-ready"],
+    "screenshot": "screenshot.png",
+    "page_templates": {},
+    "regions": { "footer": "Footer" },
+    "menus": { "primary": "Primary Menu" },
+    "customizer": [
+        {
+            "id": "minimal_style",
+            "title": "Style",
+            "controls": [
+                { "id": "accent_color", "label": "Link color", "type": "color", "default": "#b45309" },
+                { "id": "color_scheme", "label": "Color scheme", "type": "radio", "default": "light", "choices": { "light": "Light", "dark": "Dark", "auto": "Follow the visitor's system" } },
+                { "id": "show_excerpts", "label": "Show excerpts on the homepage", "type": "checkbox", "default": true }
+            ]
+        }
+    ]
+}

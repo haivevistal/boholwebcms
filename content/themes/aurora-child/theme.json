@@ -1,0 +1,21 @@
+{
+    "name": "Aurora Child (example)",
+    "version": "1.0.0",
+    "author": "BoholWeb",
+    "description": "An example child theme. It inherits every template from Aurora, overrides only the 404 page, adds a footer notice from functions.php and a 'Promo banner' Customizer section. Use it as a starting point for your own customizations.",
+    "tags": ["child-theme", "example"],
+    "parent": "aurora",
+    "screenshot": "screenshot.png",
+    "page_templates": {},
+    "regions": {},
+    "menus": { "primary": "Primary Menu", "footer": "Footer Menu" },
+    "customizer": [
+        {
+            "id": "child_promo",
+            "title": "Promo banner",
+            "controls": [
+                { "id": "promo_text", "label": "Banner text (leave empty to hide)", "type": "text", "default": "🎉 Free shipping on all orders this week!" }
+            ]
+        }
+    ]
+}
