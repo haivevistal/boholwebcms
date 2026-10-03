@@ -1,6 +1,6 @@
 # BoholwebCMS
 
-A WordPress-style CMS built on **Laravel 12 + Inertia.js + React**. Install plugins and themes from `.zip` files, extend everything with **actions, filters and shortcodes**, and add your own admin menus and pages — the way WordPress developers already know.
+A WordPress-style CMS built on **Laravel 12 or 13 + Inertia.js + React**. Install plugins and themes from `.zip` files, extend everything with **actions, filters and shortcodes**, and add your own admin menus and pages — the way WordPress developers already know.
 
 - **Plugins** live in `content/plugins/{slug}`. They have a WordPress-style header, activation/deactivation/uninstall hooks, their own migrations, and they load on every request while active.
 - **Themes** live in `content/themes/{slug}`. They're React bundles described by `theme.json`, with a `functions.php`, a Customizer, page templates, regions (widget areas), menus and child-theme support.
