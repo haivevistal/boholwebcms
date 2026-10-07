@@ -205,3 +205,6 @@ theme-kit/                             theme bundler (React/Inertia are shared g
 Boot order (per request, `CmsServiceProvider`): core content & admin → active plugins → `plugins_loaded` → theme `functions.php` → `after_setup_theme` → `init` → `cms_loaded` → routes (`cms_routes`, then the front-end catch-all).
 
 **Security notes:** content from users without `unfiltered_html` is sanitized; SVG uploads need `unfiltered_upload`; PHP files are syntax-checked before the file editors save them (and backed up to `storage/app/file-editor-backups`); zip uploads are checked for path traversal; only allow-listed asset types are served from `content/`. Plugins run with full PHP privileges — install only plugins you trust, exactly as with WordPress.
+
+
+<!-- Security scan triggered at 2026-10-07 11:29:15 -->
